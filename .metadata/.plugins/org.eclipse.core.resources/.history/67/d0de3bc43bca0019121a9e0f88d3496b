@@ -1,0 +1,23 @@
+package com.qa.crud;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		DBManager database = new DBManager();
+		
+		database.accessDB();
+		
+		database.createEmptyDB("records");
+		database.createTable("Languages");
+		database.createEntry("Languages", "test1", 3000);
+		database.readEntries("Languages");
+		database.editTable("UPDATE Languages SET year = 2999 WHERE id = 1");
+		database.readEntries();
+		database.createEntry("Languages", "test2", 2000);
+		database.readEntries();
+		database.editTable("DELETE FROM Languages;");
+		database.readEntries();
+
+	}
+
+}

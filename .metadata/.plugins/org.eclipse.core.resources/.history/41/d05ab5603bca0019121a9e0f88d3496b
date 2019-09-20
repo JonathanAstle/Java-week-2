@@ -1,0 +1,17 @@
+package com.qa.crud;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		DBManager database = new DBManager();
+		
+		database.accessDB();
+		
+		database.createEmptyDB("records");
+		database.createTable("Languages");
+		database.createEntry("Languages", "testy", 3000);
+		database.readEntries("Languages");
+
+	}
+
+}

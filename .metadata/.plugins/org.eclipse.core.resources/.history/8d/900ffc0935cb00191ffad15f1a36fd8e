@@ -1,0 +1,70 @@
+package com.qa.assessment;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Grid {
+	private int treasureXCoordinate;
+	private int treasureYCoordinate;
+	private ArrayList<ArrayList<String>> board;
+	
+	public Grid(int gridSideLength) {
+				
+		this.treasureXCoordinate = 1; //Make this a random number between 0 and gridSizeLength
+		this.treasureYCoordinate = 4; //Make this a random number between 0 and gridSizeLength
+		
+		
+		
+		ArrayList<ArrayList<String>> board = new ArrayList<ArrayList<String>>();
+		
+		ArrayList<String> y = new ArrayList<String>();
+		for (int i = 0; i<gridSideLength; i++) {
+			y.add("o");
+		}
+		
+		ArrayList<String> rowWithTreasure = new ArrayList<String>();
+		for (int i = 0; i<gridSideLength; i++ ) {
+			if (i==treasureYCoordinate) {
+				rowWithTreasure.add("x");
+			} else {
+				rowWithTreasure.add("o");
+			}
+		}
+			
+		for (int i = 0; i<gridSideLength; i++) {
+			if (i!=treasureXCoordinate) {
+				board.add(y);
+			} else {
+				board.add(rowWithTreasure);
+			}
+			
+		}
+		
+			 
+		
+		this.board = board;
+	}
+	
+	public void displayBoard() {
+		for (ArrayList<String> row: board) {
+			System.out.println(row);
+		}
+	}
+	
+	public int getTreasureXCoordinate() {
+		return treasureXCoordinate;
+	}
+	
+	public void setTreasureXCoordinate(int treasureXCoordinate) {
+		this.treasureXCoordinate = treasureXCoordinate;
+	}
+	
+	public int getTreasureYCoordinate() {
+		return treasureYCoordinate;
+	}
+	
+	public void setTreasureYCoordinate(int treasureYCoordinate) {
+		this.treasureYCoordinate = treasureYCoordinate;
+	}
+	
+}

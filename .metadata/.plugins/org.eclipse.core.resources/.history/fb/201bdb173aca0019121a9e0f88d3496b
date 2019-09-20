@@ -1,0 +1,14 @@
+package com.qa.crud;
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		DBManager database = new DBManager();
+		
+		database.accessDB();
+		
+		database.createEmptyDB("Languages");
+
+	}
+
+}

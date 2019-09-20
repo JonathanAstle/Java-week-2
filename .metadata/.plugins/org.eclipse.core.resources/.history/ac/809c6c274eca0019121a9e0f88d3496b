@@ -1,0 +1,21 @@
+package com.qa.crud;
+
+//import java.sql.ResultSet;
+
+public class Main {
+
+	public static void main(String[] args) {
+		DBManager database = new DBManager();
+		
+		System.out.println(database);
+		
+		/* database.accessDB();
+		database.createEntry();
+		database.readEntries();
+		database.updateEntry();
+		database.readEntries();
+		database.deleteEntry();
+		database.readEntries(); */
+	}
+
+}

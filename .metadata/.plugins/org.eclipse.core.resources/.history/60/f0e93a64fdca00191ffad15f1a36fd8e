@@ -1,0 +1,32 @@
+package com.qa.logic_exercises;
+
+import java.util.ArrayList;
+
+public class Exercise6 {
+	public static void main(String[] args) {
+		ArrayList<Integer> array1To100 = createArrayRange(1, 10);
+		ArrayList<Integer> array100To999 = createArrayRange(100, 999);
+		ArrayList<Integer> array100To999Times10 = multiplyArrayBy(array100To999, 10);
+	}	
+	
+	
+	public static ArrayList<Integer> createArrayRange(int a, int b) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		
+		for (int i = a; i<=b; i++) {
+			numbers.add(i);
+		}
+		
+		return numbers;
+	}
+	
+	public static ArrayList<Integer> multiplyArrayBy(ArrayList<Integer> array, int a) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		
+		for (int number: array) {
+			numbers.add(number*a);
+		}
+		
+		return numbers;
+	}
+}

@@ -1,0 +1,34 @@
+package com.qa.day5;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Scanners {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+	
+		
+		System.out.println("Please enter a number: ");
+		while (!sc.hasNextInt()) {
+			System.out.println("That's not a number! Try again! ");
+			sc.next();
+		}
+		int number = sc.nextInt();
+		System.out.println("Number you typed was " + number);
+		
+		
+		System.out.println("Enter a name: ");
+		while (!sc.hasNextLine() && sc.next() != "") {
+			System.out.println("You didn't type a String! Try again! ");
+			sc.next();
+		}
+		String name = sc.nextLine();
+		System.out.println("The name you typed was: " + name);
+		
+		
+		
+		sc.close();
+	}
+
+}

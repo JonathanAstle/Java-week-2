@@ -1,0 +1,39 @@
+package com.qa.crud;
+
+import java.util.Scanner;
+
+//import java.sql.ResultSet;
+
+public class Main {
+
+	public static void main(String[] args) {	
+		DBManager database = new DBManager();
+		
+		Scanner sc = new Scanner(System.in);
+		/*
+
+		
+		System.out.println("Type something in: ");
+		String input = sc.next();
+		System.out.println(input);
+		*/
+		
+		
+		database.accessDB();
+		
+		database.createEmptyDB("records");
+		database.createTable("Languages");
+		database.createEntry("Languages", "test1", 3000);
+		database.readEntries("Languages");
+		database.editTable("UPDATE Languages SET year = 2999 WHERE id = 1");
+		database.readEntries("Languages");
+		database.createEntry("Languages", "test2", 2000);
+		database.readEntries("Languages");
+		database.editTable("DELETE FROM Languages;"); //edit can perform update/insert/delete
+		database.readEntries("Languages");
+		
+		database.closeConnection();
+		sc.close();
+	}
+
+}

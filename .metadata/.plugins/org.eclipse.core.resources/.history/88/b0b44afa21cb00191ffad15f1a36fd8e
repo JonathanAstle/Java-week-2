@@ -1,0 +1,14 @@
+package com.qa.assessment;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Grid {
+	private int treasureXCoordinate;
+	private int treasureYCoordinate;
+	private ArrayList<Integer> board;
+	
+	public Grid(int gridSideLength) {
+		this.treasureXCoordinate = Math.random();
+	}
+}

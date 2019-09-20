@@ -1,0 +1,43 @@
+package com.qa.assessment;
+
+public class Player {
+	private String name;
+	private int playerXCoordinate;
+	private int playerYCoordinate;
+	
+	public Player(String name) {
+		this.name = name;
+		this.playerXCoordinate = 3; //Make this a random number between 0 and gridSizeLength
+		this.playerYCoordinate = 3; //Make this a random number between 0 and gridSizeLength
+	}
+	
+	public int getPlayerXCoordinate() {
+		return playerXCoordinate;
+	}
+	
+	public void setPlayerXCoordinate(int playerXCoordinate) {
+		this.playerXCoordinate = playerXCoordinate;
+	}
+	
+	public int getPlayerYCoordinate() {
+		return playerYCoordinate;
+	}
+	
+	public void setPlayerYCoordinate(int playerYCoordinate) {
+		this.playerYCoordinate = playerYCoordinate;
+	}
+	
+	public void travel(String direction) {
+		if (direction.toLowerCase() == "north") {
+			this.playerYCoordinate += 1;
+		} else if (direction.toLowerCase() == "east") {
+			this.playerXCoordinate += 1;
+		} else if (direction.toLowerCase() == "south") {
+			this.playerYCoordinate -= 1;
+		} else if (direction.toLowerCase() == "west") {
+			this.playerXCoordinate -= 1;
+		} else {
+			System.out.println("This should never have happened. travel() should only accept north east south west");
+		}
+	}
+}

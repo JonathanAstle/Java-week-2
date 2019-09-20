@@ -1,0 +1,26 @@
+package com.qa.logic_exercises;
+
+import java.util.ArrayList;
+
+public class Exercise6 {
+	public static void main(String[] args) {
+		ArrayList<Integer> numbers = createArrayRange(1, 100);
+		
+		System.out.println(numbers);
+	}
+	
+	
+	
+	
+	
+	public static ArrayList<Integer> createArrayRange(int a, int b) {
+		ArrayList<Integer> numbers = new ArrayList<Integer>();
+		
+		for (int i = a; i<=b; i++) {
+			numbers.add(i);
+		}
+		
+		return numbers;
+	}
+	
+}

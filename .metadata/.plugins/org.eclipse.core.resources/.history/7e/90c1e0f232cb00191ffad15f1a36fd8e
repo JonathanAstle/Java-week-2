@@ -1,0 +1,68 @@
+package com.qa.assessment;
+
+import java.util.Scanner;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Starting game ...");
+		System.out.println("You wake up in a swamp. You must find the treasure. Only information you will be given is your current distance from the treasure after every move you make.");
+		System.out.println("To start with, tell me your character name: ");
+		String name = sc.next();
+		
+		Player player = new Player(name);
+		
+		System.out.println("Okay " + name + ", the swamp forms a square grid. How big would you like each side of your grid to be in arbitrary travel distances?");
+		
+		
+		while (!sc.hasNextInt()) {
+			System.out.println("That's not a number! Try again! ");
+			sc.next();
+		}
+		int gridSideLength = sc.nextInt();
+		System.out.println("Okay, the size of your swamp is " + gridSideLength + " by " + gridSideLength);
+		
+		Grid grid = new Grid(gridSideLength);
+		
+		grid.displayBoard();
+		
+		System.out.println("Treasure Location is: (" + grid.getTreasureXCoordinate() + ", " + grid.getTreasureYCoordinate() + ")");
+		System.out.println("Your location is: (" + player.getPlayerXCoordinate() + ", " + player.getPlayerYCoordinate() + ")");
+		
+		int turns = 0;
+		while (player.getPlayerXCoordinate() != grid.getTreasureXCoordinate() || player.getPlayerYCoordinate() != grid.getTreasureYCoordinate()) {
+			int xDistance = player.getPlayerXCoordinate() - grid.getTreasureXCoordinate();
+			int yDistance = player.getPlayerYCoordinate() - grid.getTreasureYCoordinate();
+			double distance = Math.sqrt(xDistance*xDistance + yDistance*yDistance);
+			System.out.println("You are currently " + distance + " away. Which direction would you like to travel?");
+			String direction = sc.next().toLowerCase();
+			
+			while (!(direction.equals("north")) && !(direction.equals("east")) && !(direction.equals("south")) && !(direction.equals("west"))) {
+				System.out.println("Please type \"north\", \"south\", \"east\" or \"west\": ");
+				direction = sc.next().toLowerCase();
+			}
+			System.out.println("you walk one square " + direction + "...");
+			
+			player.travel(direction);
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		sc.close();
+	}
+	
+	
+
+}

@@ -1,0 +1,7 @@
+package com.qa.assessment;
+
+public class Player {
+	private String name;
+	private int playerXCoordinate;
+	private int playerYCoordinate;
+}
